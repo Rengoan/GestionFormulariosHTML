@@ -1,0 +1,11 @@
+{
+    "elements": {
+        "br": {},
+        "input": {},
+        "select": {},
+        "textarea": {},
+        "label": {},
+        "option": {}
+    },
+    "attributes": {}
+}

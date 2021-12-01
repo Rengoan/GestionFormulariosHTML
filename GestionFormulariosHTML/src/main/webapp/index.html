@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario registro de datos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Formulario registro de datos</h1>
+
+        <form name="formulario" action="/GestionParametros/Servlet" method="POST">
+            <ul>     
+                <li>
+                    <label for="name">Usuario:(*) </label>
+                    <input type="text" id="name" name="user_name">
+                </li>
+                <br>
+                <li>
+                    <label for="password">Password:(*) </label>
+                    <input type="password" id="pass" name="password">
+                </li>
+                <br>
+                <li>
+                    <label>Tecnologías de internet:(*) </label>
+                </li>
+                <input type="checkbox" id="check1" name="check1 value="Java">
+                <label for="check1">Java</label><br>
+
+                <input type="checkbox" id="check2" name="check2 value=".net">
+                <label for="check2">.Net</label><br>
+                <input type="checkbox" id="check3" name="check3 value="php">
+                <label for="check3">PHP</label><br>
+
+                <br>
+                <li>
+
+                    <label>Género:(*) </label>
+                </li>
+                <input type="checkbox" id="hombre" name="hombre value="hombre">
+                <label for="hombre">Hombre</label><br>
+                <input type="checkbox" id="mujer" name="mujer value="mujer">
+                <label for="mujer">Mujer</label><br>
+                <br>
+                <li>
+                    <label>Profesion:(*) </label>
+                    <select name="select">
+                        <option value="Profesor">Profesor</option>
+                        <option value="Jugador">Jugador</option>
+                        <option value="Piloto">Piloto</option>
+                    </select>
+                </li>
+                <br>
+                <li>
+                    <label>Musica favorita:(*) </label>
+                </li>
+                <select name="select2" multiple="">
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Salsa">Salsa</option>
+                </select>
+                
+                <br>
+                <br>
+                <li>
+                    <label>Comentarios</label>
+                </li>
+
+                <textarea id="comentario" name="comentario" rows="4" cols="40">
+                    Escribir un texto
+                </textarea> 
+
+
+
+
+            </ul>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="submit" value="Limpiar">
+
+        </form>
+    </body>
+</html>
