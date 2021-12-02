@@ -3,11 +3,15 @@
     <head>
         <title>Formulario registro de datos</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="Stylesheet" type="txt/css" href="Recursos/estilos.css"/>
+        <script type="text/javascript" src="Recursos/validacion.js"></script>
     </head>
-    <body> 
+    <body style="background-color: yellow"> 
         <h1>Formulario registro de datos</h1>
 
-        <form name="formulario" action="/GestionParametros/Servlet" method="POST">
+        <div style="background-color: green">
+        <form name="formulario" action="/GestionFormularios/Servlet" method="POST"
+              onsubmit="return validarForm(this)">
             <ul>     
                 <li>
                     <label for="name">Usuario:(*) </label>
@@ -22,37 +26,39 @@
                 <li>
                     <label>Tecnologías de internet:(*) </label>
                 </li>
-                <input type="checkbox" id="check1" name="check1 value="Java">
-                <label for="check1">Java</label><br>
+                <input type="checkbox" id="check1" name="tecnologia value="Java">
+                <label for="tecnologia">Java</label><br>
 
-                <input type="checkbox" id="check2" name="check2 value=".net">
-                <label for="check2">.Net</label><br>
-                <input type="checkbox" id="check3" name="check3 value="php">
-                <label for="check3">PHP</label><br>
+                <input type="checkbox" id="check2" name="tecnologia value=".net">
+                <label for="tecnologia">.Net</label><br>
+                <input type="checkbox" id="check3" name="tecnologia value="php">
+                <label for="tecnologia">PHP</label><br>
 
                 <br>
                 <li>
 
                     <label>Género:(*) </label>
                 </li>
-                <input type="checkbox" id="hombre" name="hombre value="hombre">
+                <input type="radio" id="hombre" name="genero value="hombre">
                 <label for="hombre">Hombre</label><br>
-                <input type="checkbox" id="mujer" name="mujer value="mujer">
+                <input type="radio" id="mujer" name="genero value="mujer">
                 <label for="mujer">Mujer</label><br>
                 <br>
                 <li>
                     <label>Profesion:(*) </label>
-                    <select name="select">
-                        <option value="Profesor">Profesor</option>
-                        <option value="Jugador">Jugador</option>
-                        <option value="Piloto">Piloto</option>
+                    <select name="profesion">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Profesor</option>
+                        <option value="2">Ingeniero</option>
+                        <option value="3">Jubilado</option>
+                        <option value="4">Otro</option>
                     </select>
                 </li>
                 <br>
                 <li>
                     <label>Musica favorita:(*) </label>
                 </li>
-                <select name="select2" multiple="">
+                <select name="musica" multiple="">
                     <option value="Rock">Rock</option>
                     <option value="Pop">Pop</option>
                     <option value="Salsa">Salsa</option>
@@ -64,7 +70,7 @@
                     <label>Comentarios</label>
                 </li>
 
-                <textarea id="comentario" name="comentario" rows="4" cols="40">
+                <textarea id="comentario" name="comentario" rows="2" cols="30">
                     Escribir un texto
                 </textarea> 
 
@@ -73,9 +79,10 @@
 
             </ul>
             <br>
-            <input type="submit" value="Enviar">
-            <input type="submit" value="Limpiar">
+            <input type="submit" value="Enviar" name="enviar">
+            <input type="submit" value="Limpiar" name="limpiar">
 
         </form>
+        </div>
     </body>
 </html>
