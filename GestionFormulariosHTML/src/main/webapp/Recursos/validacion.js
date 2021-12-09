@@ -1,8 +1,8 @@
 
 function validarForm(formulario){
 
-    var usuario= formulario.user_name;
-    if (usuario === "" || usuario.value === "Debes escribir el nombre de usuario") {
+    var usuarios= formulario.usuario;
+    if (usuarios === "" || usuarios.value === "Debes escribir el nombre de usuario") {
         alert("Debes escribir el nombre de usuario");
         return false;
     }
@@ -42,7 +42,7 @@ function validarForm(formulario){
         
         
     var profesiones = formulario.profesion;
-    if(profesiones.value === null){
+    if(profesiones.value <1 || profesiones.value === null){
         alert("Debe seleccionar una profesion");
         return false;
     }
