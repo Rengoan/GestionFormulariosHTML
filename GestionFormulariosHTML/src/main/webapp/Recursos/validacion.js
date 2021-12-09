@@ -1,14 +1,15 @@
 
 function validarForm(formulario){
 
-    if (user_name === "") {
+    var usuario= formulario.user_name;
+    if (usuario === "" || usuario.value === "Debes escribir el nombre de usuario") {
         alert("Debes escribir el nombre de usuario");
         return false;
     }
+    
+    
     var password = formulario.password;
-
     if (password.value === "" || password.value.length < 6 ) {
-        
         alert("Debes escribir un password de al menos 6 caracteres");
         return false;
     }
@@ -16,42 +17,41 @@ function validarForm(formulario){
     
     var tecnologias = formulario.tecnologia;
     var checkSeleccionado = false;
-    
     for(var i = 0; i<tecnologias.length; i++){
         if(tecnologias[i].checked){
             checkSeleccionado = true;
         }
-        if(!checkSeleccionado){
+    }
+    if(!checkSeleccionado){
             alert("Debes seleccionar una tecnologia");
             return false;
         }
-    }
+    
     
     var generos = formulario.genero;
-    var radio = false;
-    
-    for(var i = 0; i<genero.length; i++){
-        if(genero[i].checked){
-            radio = true;
+    var radioSeleccionado = false;
+    for(var i = 0; i<generos.length; i++){
+        if(generos[i].checked){
+            radioSeleccionado = true;
         }
-        if(!radio){
+    }
+    if(!radioSeleccionado){
             alert("Debes seleccionar un genero");
             return false;
         }
-    }
-    
+        
+        
     var profesiones = formulario.profesion;
-    var radio = false;
-    
-    for(var i = 0; i<genero.length; i++){
-        if(genero[i].checked){
-            radio = true;
-        }
-        if(!radio){
-            alert("Debes seleccionar un genero");
-            return false;
-        }
+    if(profesiones.value === null){
+        alert("Debe seleccionar una profesion");
+        return false;
     }
+    
+    
+    /*Si hemos llegado a este punto y no hemos devuelto ningun false todo ha ido correcto*/
+    
+    alert("Formulario validado con exite, enviando datos al servidor.");
+    return true;
     
             
 }
